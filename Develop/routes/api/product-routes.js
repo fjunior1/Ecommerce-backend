@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Category and Tag data
   console.log("products");
   try {
-    const products = await Product.findAll(/*{ include: [{ model: category }, { model: tag }], }*/);
+    const products = await Product.findAll({ include: [{ model: Category }, { model: Tag }], });
     res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Category and Tag data
   console.log("product:id");
   try {
-    const product = await Product.findByPk(req.params.id/*, { include: [{ model: Category }, { model: Tag }], }*/);
+    const product = await Product.findByPk(req.params.id, { include: [{ model: Category }, { model: Tag }], });
 
     if (!product) {
       res.status(404).json({ mesage: "Product not found with id" + res.params.id });
