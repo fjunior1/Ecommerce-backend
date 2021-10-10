@@ -32,4 +32,4 @@ THEN I am able to successfully create, update, and delete data in my database
 ```
 
 ## VIDEO
-![example running app](./assets/eCommerceAnim.gif)
+![example running app](./Assets/eCommerceAnim.gif)
